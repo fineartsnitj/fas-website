@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import memberRoutes from './routes/memberRoutes.js';
 import cookieParser from 'cookie-parser';
 
 dotenv.config();
@@ -29,4 +30,4 @@ app.get('/', (req, res)=>{
 
 app.use('/v1/user', userRoutes);
 app.use('/v1/auth', authRoutes);
-app.use('/v1/members', membersr);
+app.use('/v1/member', memberRoutes);

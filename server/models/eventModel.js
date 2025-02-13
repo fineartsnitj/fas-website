@@ -25,8 +25,13 @@ const eventSchema = new mongoose.Schema({
         type: String,
         enum: ['upcoming', 'completed'],
         default: 'upcoming'
-    }
-
+    },
+    pictures:[{
+        type: String,
+    }],
+    winners:[{
+        type: String,
+    }]
 }, {timestamps: true});
 
 const User = mongoose.model('Event', eventSchema);
