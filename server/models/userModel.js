@@ -37,10 +37,6 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 2000
     },
-    name:{
-        type: String,
-        required: true
-    },
     bio:{
         type: String
     },
