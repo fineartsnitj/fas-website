@@ -33,5 +33,5 @@ const artworkSchema = new mongoose.Schema({
 
 }, {timestamps: true});
 
-const User = mongoose.model('Artwork', artworkSchema);
+const Artwork = mongoose.model('Artwork', artworkSchema);
 export default Artwork;

@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
     }],
     year:{
         type: Number,
-        default: 2000
+        default: 2028
     },
     bio:{
         type: String

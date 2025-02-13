@@ -34,5 +34,5 @@ const eventSchema = new mongoose.Schema({
     }]
 }, {timestamps: true});
 
-const User = mongoose.model('Event', eventSchema);
-export default Artwork;
+const Event = mongoose.model('Event', eventSchema);
+export default Event;

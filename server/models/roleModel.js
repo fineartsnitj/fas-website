@@ -15,5 +15,5 @@ const roleSchema = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model('Role', roleSchema);
-export default Artwork;
+const Role = mongoose.model('Role', roleSchema);
+export default Role;

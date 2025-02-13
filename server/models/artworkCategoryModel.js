@@ -14,5 +14,5 @@ const artworkCategorySchema = new mongoose.Schema({
     }],
 });
 
-const User = mongoose.model('ArtworkCategory', artworkCategorySchema);
-export default User;
+const ArtworkCategory = mongoose.model('ArtworkCategory', artworkCategorySchema);
+export default ArtworkCategory;
