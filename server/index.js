@@ -18,9 +18,15 @@ app.use(express.json());
 app.use(cors({credentials: true, origin: true}));
 app.use(cookieParser());
 
-app.listen(4000, ()=>{
-    console.log("server running on port 4000");
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
+
+// app.listen(4000, ()=>{
+//     console.log("server running on port 4000");
+// });
 
 app.get('/', (req, res)=>{
     res.json({
