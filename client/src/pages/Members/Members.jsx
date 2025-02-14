@@ -22,7 +22,7 @@ const Members = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/v1/member/getAllMembers`)
+    fetch(`${baseUrl}/v1/member/getAllMembers`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error("Error fetching data:", err));
