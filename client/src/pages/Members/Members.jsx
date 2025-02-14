@@ -15,7 +15,7 @@
 // export default Members
 
 import React, { useEffect, useState } from "react";
-const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
+const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL.replace(/\/$/, "");
 
 
 const Members = () => {
