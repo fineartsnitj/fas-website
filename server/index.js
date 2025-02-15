@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser';
 
 
 dotenv.config();
+const ORIGIN_URL = process.env.ORIGIN_URL;
 const MONGODB_URL = process.env.MONGODB_URL
 mongoose.connect(MONGODB_URL)
     .then(console.log("connected to mongodb"))
@@ -19,7 +20,7 @@ app.use(express.json());
 // app.use(cors({credentials: true, origin: true}));
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://fineartssociety.vercel.app"],
+    origin: ["http://localhost:5173", "https://fineartssociety.vercel.app", ORIGIN_URL],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
