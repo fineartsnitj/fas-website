@@ -6,6 +6,8 @@ import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import memberRoutes from './routes/memberRoutes.js';
 import cookieParser from 'cookie-parser';
+import {cloudinaryConnect} from './utils/cloudinary.js'
+import bodyParser from 'body-parser';
 
 
 dotenv.config();
@@ -17,6 +19,7 @@ mongoose.connect(MONGODB_URL)
 
 const app = express();
 app.use(express.json());
+app.use(bodyParser.urlencoded({limit:"10mb", extended: true }));
 // app.use(cors({credentials: true, origin: true}));
 
 app.use(cors({
@@ -48,3 +51,5 @@ app.get('/', (req, res)=>{
 app.use('/v1/user', userRoutes);
 app.use('/v1/auth', authRoutes);
 app.use('/v1/member', memberRoutes);
+
+cloudinaryConnect(); 
