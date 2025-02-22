@@ -12,6 +12,10 @@ import Members from './Members/Members'
 const HomeLayout = () => {
   return (
     <>
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(images/image1.jpg)` }}
+    >
         <Header></Header>
         <Navbar></Navbar>
         <section className='align-elements py-20'>
@@ -28,6 +32,7 @@ const HomeLayout = () => {
                 
             </Routes>
         </section>
+        </div>
     </>
   )
 }
