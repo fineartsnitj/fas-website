@@ -9,9 +9,9 @@ const MemberCard = ({member}) => {
                     alt="Shoes" />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{member?.username}</h2>
+                <h2 className="card-title">{member?.membername}</h2>
                 <p>{member?.roles?.at(0)?.roleName} - {member?.roles?.at(0)?.team} </p>
-                
+                <p>{member?.roles?.at(1)?.roleName} - {member?.roles?.at(1)?.team} </p>
             </div>
         </div>
     )

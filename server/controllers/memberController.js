@@ -14,7 +14,7 @@ async function uploadFileToCloudinary(file, folder, quality) {
 
 export const getAllMembers = async (req, res) => {
     try {
-        const members = await User.find({}, { username: true, profileImage: true }).populate({
+        const members = await User.find({}, { membername: true, profileImage: true }).populate({
             path: "roles",
         });
         res.status(200).json({ members: members, success: true });
@@ -25,9 +25,9 @@ export const getAllMembers = async (req, res) => {
 }
 
 
-export const getMemberById = async (req, res) => {
+export const getMemberByUsername = async (req, res) => {
     try {
-        const member = await User.findById(req.params.id);
+        const member = await User.findOne({username: req.params.username});
         if (!member) {
             return res.status(200).json({ message: "User not found", success: false });
         }
@@ -41,7 +41,7 @@ export const getMemberById = async (req, res) => {
 
 export const getMemberByNameSearch = async (req, res) => {
     try {
-        const member = await User.find({ username: { $regex: req.params.name, $options: "i" } }).limit(100);
+        const member = await User.find({ membername: { $regex: req.params.name, $options: "i" } }).limit(100);
         if (!member) {
             return res.status(200).json({ message: "User not found", success: false });
         }
