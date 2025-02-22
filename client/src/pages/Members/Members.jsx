@@ -2,7 +2,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import MemberCard from './MemberCard'
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL.replace(/\/$/, "");
+const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
 
 const Members = () => {
