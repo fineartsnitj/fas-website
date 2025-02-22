@@ -20,7 +20,7 @@ const Members = () => {
     try {
       const response = await axios({
         method: 'get',
-        url: `${BASE_URL}/v1/member/getAllMembers` //?keyword=${keyword}&page=${page}&pageSize=${pageSize}`,
+        url: `${BASE_URL}/v1/member/getAllMembers?keyword=${keyword}&page=${page}&pageSize=${pageSize}`,
       });
       console.log(response);
       setMembers((prevItems) => [...prevItems, ...response.data.members])

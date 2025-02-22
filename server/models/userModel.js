@@ -34,10 +34,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: 'default.jpg'
     },
-    roles:[{
+    role1:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Role'
-    }],
+    },
+    role2:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Role'
+    },
+    role3:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Role'
+    },
     year:{
         type: Number,
         default: 2028
