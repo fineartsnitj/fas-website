@@ -14,7 +14,7 @@ async function uploadFileToCloudinary(file, folder, quality) {
 
 export const getAllMembers = async (req, res) => {
     try {
-        const members = await User.find({}, { username: true }).populate({
+        const members = await User.find({}, { username: true, profileImage: true }).populate({
             path: "roles",
         });
         res.status(200).json({ members: members, success: true });
