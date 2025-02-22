@@ -18,29 +18,24 @@ mongoose.connect(MONGODB_URL)
     .catch((e)=>console.log(e));
 
 const app = express();
-app.use(express.json());
-app.use(bodyParser.urlencoded({limit:"10mb", extended: true }));
-// app.use(cors({credentials: true, origin: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true }));
+// app.use(cors());
 
 app.use(cors({
     origin: ["http://localhost:5173", "https://fineartssociety.vercel.app", ORIGIN_URL],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    // methods: ["GET", "POST", "PUT", "DELETE"],
+    // allowedHeaders: ["Content-Type", "Authorization", "content-type"]
 }));
 
 
 app.use(cookieParser());
 
-
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-// app.listen(4000, ()=>{
-//     console.log("server running on port 4000");
-// });
 
 app.get('/', (req, res)=>{
     res.json({

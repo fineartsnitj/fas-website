@@ -16,3 +16,14 @@ export const createRole = async(req, res)=>{
         return res.status(500).json({message: e.message});
     }
 }
+
+export const getAllRoles = async(req, res)=>{
+    try{
+        const roles = await Role.find({});
+        return res.status(200).json({roles});
+    }
+    catch(e){
+        console.log(e.message);
+        return res.status(500).json({message: e.message});
+    }
+}

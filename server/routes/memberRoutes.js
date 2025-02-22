@@ -1,5 +1,5 @@
 import express from 'express'
-import { createRole } from '../controllers/roleController.js';
+import { createRole, getAllRoles } from '../controllers/roleController.js';
 import { getAllMembers, createMember, updateMember, getMemberByUsername } from '../controllers/memberController.js';
 import upload from '../Middleware/multer.js';
 
@@ -10,5 +10,6 @@ router.post('/createMember', upload.single('file'), createMember);
 router.get('/getMemberByUsername/:username', getMemberByUsername);
 router.put("/updateMember/:id", upload.single('file'), updateMember);
 router.post('/createRole', createRole);
+router.get('/getAllRoles', getAllRoles);
 
 export default router;
