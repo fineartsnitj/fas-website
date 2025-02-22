@@ -8,6 +8,7 @@ import Home from './Home'
 import Gallery from './Gallery/Gallery'
 import FasGallery from './Gallery/FasGallery'
 import Members from './Members/Members'
+import MemberProfile from './Members/MemberProfile'
 
 const HomeLayout = () => {
   return (
@@ -25,7 +26,10 @@ const HomeLayout = () => {
                 <Route path='gallery' element={<Gallery></Gallery>}></Route>
                 <Route path='fasgallery' element={<FasGallery></FasGallery>}></Route>
                 <Route path='members' element={<Members></Members>}></Route>
+                <Route path='members/:username' element={<MemberProfile></MemberProfile>}></Route>
+
                 <Route element={<PrivateRoute></PrivateRoute>}>
+
     
                     {/* <Route path='profile' element={<Profile></Profile>}></Route> */}
                 </Route>
