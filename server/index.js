@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(cors({
     origin: ["http://localhost:5173", "https://fineartssociety.vercel.app", ORIGIN_URL],
     credentials: true,
-    // methods: ["GET", "POST", "PUT", "DELETE"],
-    // allowedHeaders: ["Content-Type", "Authorization", "content-type"]
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "content-type"]
 }));
 
 

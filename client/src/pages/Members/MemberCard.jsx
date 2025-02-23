@@ -8,7 +8,7 @@ const MemberCard = ({member}) => {
             <figure>
                 <img loading='lazy'
                     src={member?.profileImage=='default.jpg'? defaultProfile: member?.profileImage}
-                    alt="Shoes" />
+                    alt="Profile Pic" />
             </figure>
             <div className="card-body">
                 <NavLink to={`${member.username}`} className="card-title hover:scale-110">{member?.membername}</NavLink>
