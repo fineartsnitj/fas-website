@@ -1,12 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import defaultProfile from '../../assets/default.jpg.png'
 
 const MemberCard = ({member}) => {
     return (
         <div className="card card-compact bg-base-100 w-96 shadow-xl">
             <figure>
                 <img loading='lazy'
-                    src={member?.profileImage}
+                    src={member?.profileImage=='default.jpg'? defaultProfile: member?.profileImage}
                     alt="Shoes" />
             </figure>
             <div className="card-body">
