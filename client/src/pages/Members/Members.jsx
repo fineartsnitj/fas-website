@@ -12,6 +12,7 @@ const Members = () => {
   const [hasMore, setHasMore] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [page, setPage] = useState(1);
+  const [selectedYear, setSelectedYear] = useState("all");
   const [pageSize, setPageSize] = useState(10);
 
   async function fetchAccount() {
@@ -36,20 +37,43 @@ const Members = () => {
     setPage(1);
     fetchAccount();
     setLoading(false);
-  }, [keyword]);
+  }, [selectedYear]);
 
   return (
-    <div>
-      {loading ?
-        <div>
-          <h1>Loading...</h1>
-        </div> :
-        <div>{
-          members.map((member, index) => <MemberCard key={index} member={member}></MemberCard>)
-        }
-        </div>
-      }
-    </div>
+    <div
+    className="w-[90%] max-w-[1400px] bg-black/50 backdrop-blur-2xl 
+               rounded-xl shadow-lg p-8 overflow-hidden"
+  >
+    <div className="flex justify-right mb-6">
+        <select
+          value={selectedYear}
+          onChange={(e) => setSelectedYear(e.target.value)}
+          className="p-2 bg-gray-800/40 text-white rounded-lg border border-white/20"
+        >
+          <option value="all">All Years</option>
+          <option value="1">First Year</option>
+          <option value="2">Second Year</option>
+          <option value="3">Third Year</option>
+          <option value="4">Fourth Year</option>
+        </select>
+      </div>
+    {loading ? (
+      <h1 className="text-center text-gray-300 text-lg">Loading...</h1>
+    ) : (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
+                      gap-6 justify-center items-center px-4">
+        {members.length > 0 ? (
+          members.map((member, index) => (
+            <MemberCard key={index} member={member} />
+          ))
+        ) : (
+          <h2 className="text-center text-gray-400 col-span-full">
+            No members found.
+          </h2>
+        )}
+      </div>
+    )}
+  </div>
   );
 };
 
