@@ -59,6 +59,10 @@ const userSchema = new mongoose.Schema({
     domains:[{
         type: String,
         required: true
+    }],
+    artworks:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Artwork'
     }]
 }, {timestamps: true});
 

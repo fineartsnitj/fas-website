@@ -3,11 +3,11 @@ import Role from "../models/roleModel.js";
 export const createRole = async(req, res)=>{
     try{
         console.log(req.body);
-        const {roleName, team} = req.body;
+        const {roleName, team, description} = req.body;
         if(!roleName ||!team){
             return res.status(200).json({message: "Role name and team are required", success: false});
         }
-        const newRole = new Role({roleName, team});
+        const newRole = new Role({roleName, team, description});
         await newRole.save();
         return res.status(201).json({message: "Role created successfully"});
     }

@@ -12,6 +12,9 @@ const roleSchema = new mongoose.Schema({
         required: true,
         default: "Event Management",
         enum:['Event Management', 'Management', 'Public Relations', 'Social Media', 'Content Creation', 'Poster Making', 'Web Development', 'Club']
+    },
+    description:{
+        type: String
     }
 });
 

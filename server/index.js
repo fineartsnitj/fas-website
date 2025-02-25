@@ -5,6 +5,7 @@ import cors from 'cors'
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import memberRoutes from './routes/memberRoutes.js';
+import artworkRoutes from './routes/artworkRoutes.js';
 import cookieParser from 'cookie-parser';
 import {cloudinaryConnect} from './utils/cloudinary.js'
 import bodyParser from 'body-parser';
@@ -46,5 +47,6 @@ app.get('/', (req, res)=>{
 app.use('/v1/user', userRoutes);
 app.use('/v1/auth', authRoutes);
 app.use('/v1/member', memberRoutes);
+app.use('/v1/artwork', artworkRoutes);
 
 cloudinaryConnect(); 
