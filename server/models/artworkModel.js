@@ -25,7 +25,7 @@ const artworkSchema = new mongoose.Schema({
     }],
     categories:{
         type: String,
-        set: (value) => value?.toUpperCase()
+        // set: (value) => value?.toUpperCase()
     },
     price:{
         type: Number,
