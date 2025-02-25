@@ -21,7 +21,7 @@ const Gallery = () => {
     try {
       const response = await axios({
         method: 'get',
-        url: `${BASE_URL}/v1/artwork/getAllArtworks?keyword=${keyword}&page=${page}&pageSize=${pageSize}`,
+        url: `${BASE_URL}/v1/artwork/getAllArtworks?keyword=${keyword}&page=${page}&pageSize=${pageSize}&fas=${false}`,
       });
       // console.log(response);
       setartworks((prevItems) => [...prevItems, ...response?.data?.artworks])
@@ -40,7 +40,7 @@ const Gallery = () => {
       setPage(1);
       const response = await axios({
         method: 'get',
-        url: `${BASE_URL}/v1/artwork/getAllArtworks?keyword=${keyword}&page=1&pageSize=${pageSize}`,
+        url: `${BASE_URL}/v1/artwork/getAllArtworks?keyword=${keyword}&page=1&pageSize=${pageSize}&fas=${false}`,
       });
       // console.log(response);
       setartworks(response?.data?.artworks);
