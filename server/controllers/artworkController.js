@@ -51,9 +51,9 @@ export const createArtwork = async (req, res) => {
         
         const artists = artiststr.split(",");
         // console.log(artists);
-        const latestArtwork = await Artwork.findOne().sort({ createdAt: -1 });
-        const artworkNo = latestArtwork? latestArtwork.artworkNo + 1 : 1001; // TODO: Generate unique artworkNo
-        const newArtwork = new Artwork({artworkNo, artworkName, description, artists, categories, price, isFASArtwork, imageurl });
+        // const latestArtwork = await Artwork.findOne().sort({ createdAt: -1 });
+        // const artworkNo = latestArtwork? latestArtwork.artworkNo + 1 : 1001; // TODO: Generate unique artworkNo
+        const newArtwork = new Artwork({artworkName, description, artists, categories, price, isFASArtwork, imageurl });
         await newArtwork.save();
         if (artists) {
             await Promise.all(artists?.map(async (element) => {

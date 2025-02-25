@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
+import mongooseSequence from 'mongoose-sequence'
+
+const AutoIncrement = mongooseSequence(mongoose);
 
 const artworkSchema = new mongoose.Schema({
-    artworkNo:{
-        type: Number,
-        required: true,
-        unique: true,
-        default: 1
-    },
     artworkName:{
         type: String,
         required: true
@@ -25,7 +22,7 @@ const artworkSchema = new mongoose.Schema({
     }],
     categories:{
         type: String,
-        // set: (value) => value?.toUpperCase()
+        set: (value) => value?.toUpperCase()
     },
     price:{
         type: Number,
@@ -39,6 +36,8 @@ const artworkSchema = new mongoose.Schema({
     }
 
 }, {timestamps: true});
+
+artworkSchema.plugin(AutoIncrement, {inc_field: 'artworkNo'});
 
 const Artwork = mongoose.model('Artwork', artworkSchema);
 export default Artwork;

@@ -1,5 +1,4 @@
 import React from 'react'
-import Artwork from '../../../../server/models/artworkModel'
 
 const GalleryCard = ({artwork}) => {
     return (
