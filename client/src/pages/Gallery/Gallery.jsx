@@ -10,7 +10,6 @@ const Gallery = () => {
 
   const [artworks, setartworks] = useState([]);
   const [loading, setLoading] = useState(false);
-  
   const [hasMore, setHasMore] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [page, setPage] = useState(1);

@@ -1,7 +1,4 @@
 import mongoose from "mongoose";
-// import mongooseSequence from 'mongoose-sequence'
-
-// const AutoIncrement = mongooseSequence(mongoose);
 
 const artworkSchema = new mongoose.Schema({
     artworkNo:{
@@ -42,8 +39,6 @@ const artworkSchema = new mongoose.Schema({
     }
 
 }, {timestamps: true});
-
-// artworkSchema.plugin(AutoIncrement, {inc_field: 'artworkNo'});
 
 const Artwork = mongoose.model('Artwork', artworkSchema);
 export default Artwork;
