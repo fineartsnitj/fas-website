@@ -14,7 +14,11 @@ async function uploadFileToCloudinary(file, folder, quality) {
 
 export const getAllArtworks = async (req, res) => {
     try {
-        const artworks = await Artwork.find({});
+        const {keyword, page, pageSize} = req.query;
+        console.log(keyword, page, pageSize);
+        const skip = pageSize * (page - 1);
+        const query = { artworkName: {$regex: keyword, $options: "i" }};
+        const artworks = await Artwork.find(query).skip(skip).limit(pageSize).populate({path: 'artists'});
         res.json({ artworks: artworks, success: true });
     } catch (error) {
         console.error(error);

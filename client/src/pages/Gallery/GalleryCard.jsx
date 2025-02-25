@@ -1,12 +1,13 @@
 import React from 'react'
+import Artwork from '../../../../server/models/artworkModel'
 
-const GalleryCard = () => {
+const GalleryCard = ({artwork}) => {
     return (
         <span className='grid grid-cols-4 gap-4'>
             <div className="glass w-96">
                 <figure>
                     <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    // src={artwork?.imageurl}
                     alt="car!" />
                 </figure>
                 <div className="card-body">
