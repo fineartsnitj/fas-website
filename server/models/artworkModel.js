@@ -4,6 +4,12 @@ import mongoose from "mongoose";
 // const AutoIncrement = mongooseSequence(mongoose);
 
 const artworkSchema = new mongoose.Schema({
+    artworkNo:{
+        type: Number,
+        required: true,
+        unique: true,
+        default: 1
+    },
     artworkName:{
         type: String,
         required: true
